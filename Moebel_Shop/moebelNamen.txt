@@ -1,0 +1,35 @@
+Betten
+	Boxspringbett Countess  399
+	Boxspringbett mit Bettkasten Princess   799
+	Boxspringbett mit LED-Beleuchtung Knight   719
+
+
+
+Schraenke
+	Kleiderschrank Venice  239
+	Drehtürenschrank, 3-türig Laurito  275
+	Schwebetürenschrank Widnes 269
+
+
+
+Sessel
+	Fernsehsessel Kunstleder Solea  229
+	Sessel Hubertine   179 
+	Fernsehsessel Leder 9773   1.439
+
+
+
+Sofas
+	Ecksofa in trendigem Cordstoff Lianea    549 
+	Ecksofa Arissa de Luxe    1599
+	Sofa mit Hocker Quinn   499 
+
+
+
+Stuhle 
+	Stuhl Tamix 1    69
+	Schalenstuhl Thore    59
+	Schwingstuhl Flavio   49
+
+
+
