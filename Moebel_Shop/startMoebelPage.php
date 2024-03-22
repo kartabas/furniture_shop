@@ -13,7 +13,7 @@
 	session_start();
 
 	?>
-asas
+
 	<div class="header">
 		<div class="header__tittle">
 			<h1>Möbel Shop</h1>
