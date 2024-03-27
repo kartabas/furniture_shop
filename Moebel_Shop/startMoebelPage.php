@@ -8,12 +8,23 @@
 	<title>Start Seite </title>
 </head>
 
+
 <body>
+
+
+
 	<?php
 	session_start();
 
-	?>
 
+	include("artikle_shop.inc.php");
+	include("warenkorbDatenbank.inc.php");
+
+	// echo "<pre>";
+	// print_r($warenkorb);
+	// echo "</pre>";
+	//print_r($_SESSION );
+	?>
 	<div class="header">
 		<div class="header__tittle">
 			<h1>Möbel Shop</h1>
@@ -28,7 +39,13 @@
 				<li class="nav_title"> <a href="#">Betten</a></li>
 				<div class="warenkorb__box">
 					<li class="warenkorb__icon"> <a href="warenkorbPage.php"><img src="Bilder/icons/warenkorb.png" alt="Warenkorb"></a></li>
-					<div class="number__artikel">0</div>
+					<?php 
+						if(isset($_SESSION["warenkorb"])) {
+							echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
+						} else {
+    						echo '<div class="number__artikel">0</div>';
+						}
+					?>
 				</div>
 
 			</ul>
@@ -102,37 +119,10 @@
 		<div class="middle__container">
 
 			<div class="middle__container__cards">
-
-				<!-- <div class="box__card">
-
-					<div class="card_img">
-						<img src="Bilder/Betten_Bilder/Bett_1.jpg" alt="Boxspringbett Countess">
-					</div>
-					<div class="card__title">
-						<p>Boxspringbett Countess</p>
-					</div>
-					<div class="card__stars">
-						<span><img src="Bilder/icons/star.png" alt=""></span>
-						<span><img src="Bilder/icons/star.png" alt=""></span>
-
-
-					</div>
-					<div class="card__price">
-						<h3>399,00 &euro;</h3>
-					</div>
-					<div class="card__buy">
-						<button class="card__buy_button"><img src="Bilder/icons/zum-warenkorb-hinzufugen.png" alt=""></button>
-					</div>
-					
-
-				</div> --> <!--box__card -->
-
-
-				<?php
-				include("artikle_shop.inc.php");
-				include("warenkorbDatenbank.inc.php");
-
-				for ($i = 0; $i < 3; $i++) {
+				
+			<?php for ($i = 0; $i < count($betten); $i++) { ?>
+				<form class="artikel__form" method="POST" action="warenkorbDatenbank.inc.php" >
+					<?php
 					echo "<div class='box__card'>";
 
 					echo "<div class='card_img'>";
@@ -148,16 +138,24 @@
 					echo "<div class='card__price'>
 							<h3>" . $betten[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
-					echo "<div class='card__buy'>
-							<button class='card__buy_button' value='.$betten[$i].'><img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''></button>
-							</div>";
+					echo "<div class='card__buy'>";
+					?>
+							<input type="hidden" name="artikel" value="<?php echo htmlspecialchars(json_encode($betten[$i])); ?>">
+							<button class='card__buy_button'  type="submit" name="submit_button" >
+									<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
+							</button>
 
+					<?php
 
+					echo "</div>";
 					echo "</div>"; //<!--box__card-->
-				}
+					?>
+				</form>
+			<?php }?>
 
-
-				for ($i = 0; $i < 3; $i++) {
+			<?php for ($i = 0; $i < count($schraenke); $i++) { ?>
+				<form method="POST" action="warenkorbDatenbank.inc.php">
+					<?php
 					echo "<div class='box__card'>";
 
 					echo "<div class='card_img'>";
@@ -173,15 +171,26 @@
 					echo "<div class='card__price'>
 							<h3>" . $schraenke[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
-					echo "<div class='card__buy'>
-							<button class='card__buy_button'><img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''></button>
-							</div>";
+					echo "<div class='card__buy'>";
+					?>
+							<input type="hidden" name="artikel" value="<?php echo htmlspecialchars(json_encode($schraenke[$i])); ?>">
+							<button class='card__buy_button'  type="submit" name="submit_button">
+									<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
+							</button>
+
+					<?php
 
 
+
+					echo "</div>";
 					echo "</div>"; //<!--box__card-->
-				}
+					?>
+				</form>
+			<?php }?>
 
-				for ($i = 0; $i < 3; $i++) {
+			<?php for ($i = 0; $i < count($sessel); $i++) { ?>
+				<form method="POST" action="warenkorbDatenbank.inc.php">
+					<?php
 					echo "<div class='box__card'>";
 
 					echo "<div class='card_img'>";
@@ -197,15 +206,28 @@
 					echo "<div class='card__price'>
 							<h3>" . $sessel[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
-					echo "<div class='card__buy'>
-							<button class='card__buy_button'><img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''></button>
-							</div>";
+					echo "<div class='card__buy'>";
+					?>
+							<input type="hidden" name="artikel" value="<?php echo htmlspecialchars(json_encode($sessel[$i])); ?>">
+							<button class='card__buy_button'  type="submit" name="submit_button">
+									<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
+							</button>
+
+					<?php
 
 
+
+					echo "</div>";
 					echo "</div>"; //<!--box__card-->
-				}
+					?>
+				</form>
+			<?php }?>
 
-				for ($i = 0; $i < 3; $i++) {
+
+
+			<?php for ($i = 0; $i < count($sofas); $i++) { ?>
+				<form method="POST" action="warenkorbDatenbank.inc.php">
+					<?php
 					echo "<div class='box__card'>";
 
 					echo "<div class='card_img'>";
@@ -221,15 +243,26 @@
 					echo "<div class='card__price'>
 							<h3>" . $sofas[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
-					echo "<div class='card__buy'>
-							<button class='card__buy_button'><img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''></button>
-							</div>";
+					echo "<div class='card__buy'>";
+					?>
+							<input type="hidden" name="artikel" value="<?php echo htmlspecialchars(json_encode($sofas[$i])); ?>">
+							<button class='card__buy_button'  type="submit" name="submit_button">
+									<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
+							</button>
+
+					<?php
 
 
+
+					echo "</div>";
 					echo "</div>"; //<!--box__card-->
-				}
+					?>
+				</form>
+			<?php }?>			
 
-				for ($i = 0; $i < 3; $i++) {
+			<?php for ($i = 0; $i < count($stuhle); $i++) { ?>
+				<form method="POST" action="warenkorbDatenbank.inc.php">
+					<?php
 					echo "<div class='box__card'>";
 
 					echo "<div class='card_img'>";
@@ -245,20 +278,24 @@
 					echo "<div class='card__price'>
 							<h3>" . $stuhle[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
-					echo "<div class='card__buy'>
-							<button class='card__buy_button'><img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''></button>
-							</div>";
+					echo "<div class='card__buy'>";
+					?>
+							<input type="hidden" name="artikel" value="<?php echo htmlspecialchars(json_encode($stuhle[$i])); ?>">
+							<button class='card__buy_button'  type="submit" name="submit_button">
+									<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
+							</button>
+
+					<?php
 
 
+
+					echo "</div>";
 					echo "</div>"; //<!--box__card-->
-				}
+					?>
+				</form>
+			<?php }?>
 
-
-
-
-				?>
-
-
+				
 			</div><!--middle__container__cards-->
 
 		</div><!--middle__container-->
