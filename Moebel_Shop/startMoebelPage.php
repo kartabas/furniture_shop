@@ -27,16 +27,16 @@
 	?>
 	<div class="header">
 		<div class="header__tittle">
-			<h1>Möbel Shop</h1>
+			<h1><a href="startMoebelPage.php">Möbel Shop</a></h1>
 		</div>
 
 		<div class="nav__bar">
 			<ul class="menu">
-				<li class="nav_title"> <a href="#">Sofas</a></li>
-				<li class="nav_title"> <a href="#">Schränke</a></li>
-				<li class="nav_title"> <a href="#">Stühle</a></li>
-				<li class="nav_title"> <a href="#">Sessel</a></li>
-				<li class="nav_title"> <a href="#">Betten</a></li>
+				<li class="nav_title"> <a href="#">Top Name1</a></li>
+				<li class="nav_title"> <a href="#">Top Name2</a></li>
+				<li class="nav_title"> <a href="#">Top Name3</a></li>
+				<li class="nav_title"> <a href="#">Top Name4</a></li>
+
 				<div class="warenkorb__box">
 					<li class="warenkorb__icon"> <a href="warenkorbPage.php"><img src="Bilder/icons/warenkorb.png" alt="Warenkorb"></a></li>
 					<?php 
@@ -51,7 +51,7 @@
 			</ul>
 
 		</div>
-	</div>
+	</div><!--header-->
 
 
 
@@ -62,7 +62,7 @@
 				<h1>Top Kategorien</h1>
 			</div>
 			<div class="main__container">
-				<div class="moebel__box">
+				<div class="moebel__box moebel__box__sofas">
 					<div class="box__img">
 						<img src="Bilder/Title_Bilder/sofas__title.jpg" alt="Sofas">
 					</div>
@@ -71,7 +71,7 @@
 					</div>
 				</div> <!--moebel__box-->
 
-				<div class="moebel__box">
+				<div class="moebel__box moebel__box__schraenke">
 					<div class="box__img">
 						<img src="Bilder/Title_Bilder/schraenke__title.jpg" alt="Schränke">
 					</div>
@@ -80,7 +80,7 @@
 					</div>
 				</div><!--moebel__box-->
 
-				<div class="moebel__box">
+				<div class="moebel__box moebel__box__stuehle">
 					<div class="box__img">
 						<img src="Bilder/Title_Bilder/stuehle__title.jpg" alt="Stühle">
 					</div>
@@ -89,7 +89,7 @@
 					</div>
 				</div><!--moebel__box-->
 
-				<div class="moebel__box">
+				<div class="moebel__box moebel__box__sessel">
 					<div class="box__img">
 						<img src="Bilder/Title_Bilder/sessel__title.jpg" alt="Sessel">
 					</div>
@@ -98,7 +98,7 @@
 					</div>
 				</div><!--moebel__box-->
 
-				<div class="moebel__box">
+				<div class="moebel__box moebel__box__betten">
 					<div class="box__img">
 						<img src="Bilder/Title_Bilder/betten__title.jpg" alt="Betten">
 					</div>
@@ -121,7 +121,7 @@
 			<div class="middle__container__cards">
 				
 			<?php for ($i = 0; $i < count($betten); $i++) { ?>
-				<form class="artikel__form" method="POST" action="warenkorbDatenbank.inc.php" >
+				<form class="artikel__form artikel__form__betten" method="POST" action="warenkorbDatenbank.inc.php" >
 					<?php
 					echo "<div class='box__card'>";
 
@@ -154,7 +154,7 @@
 			<?php }?>
 
 			<?php for ($i = 0; $i < count($schraenke); $i++) { ?>
-				<form method="POST" action="warenkorbDatenbank.inc.php">
+				<form class="artikel__form artikel__form__schraenke" method="POST" action="warenkorbDatenbank.inc.php">
 					<?php
 					echo "<div class='box__card'>";
 
@@ -189,7 +189,7 @@
 			<?php }?>
 
 			<?php for ($i = 0; $i < count($sessel); $i++) { ?>
-				<form method="POST" action="warenkorbDatenbank.inc.php">
+				<form class="artikel__form artikel__form__sessel" method="POST" action="warenkorbDatenbank.inc.php">
 					<?php
 					echo "<div class='box__card'>";
 
@@ -226,7 +226,7 @@
 
 
 			<?php for ($i = 0; $i < count($sofas); $i++) { ?>
-				<form method="POST" action="warenkorbDatenbank.inc.php">
+				<form class="artikel__form artikel__form__sofas" method="POST" action="warenkorbDatenbank.inc.php">
 					<?php
 					echo "<div class='box__card'>";
 
@@ -261,7 +261,7 @@
 			<?php }?>			
 
 			<?php for ($i = 0; $i < count($stuhle); $i++) { ?>
-				<form method="POST" action="warenkorbDatenbank.inc.php">
+				<form class="artikel__form artikel__form__stuhle" method="POST" action="warenkorbDatenbank.inc.php">
 					<?php
 					echo "<div class='box__card'>";
 
