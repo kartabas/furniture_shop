@@ -12,7 +12,7 @@
 	
 	session_start();
 	include("warenkorbDatenbank.inc.php");
-
+	//$_SESSION["preisAllArtikel"];
 	//$_SESSION["warenkorb"] = [];
 	// echo "<pre>";
 	// print_r( $_SESSION["warenkorb"]);
@@ -55,15 +55,11 @@
 
 	<div class="middle">
 		<div class="middle__container">
-				<!-- <?php 
-						echo "<pre>";
-						print_r( $_SESSION["warenkorb"]);
-						echo "</pre>";
-				?> -->
+
 
 			<div class="artikel_container">
 				<?php  
-				$preisAllArtikel = 0;
+				$_SESSION["preisAllArtikel"] = 0;
 				for($i=0;$i<(count($_SESSION["warenkorb"]));++$i){?>
 				<form class="warenkorb__artikel" method="POST" action="deleteArtikel.inc.php">
 					<div class="artikel__box">
@@ -88,7 +84,7 @@
 					</div><!-- artikel__box-->
 					</form>
 					<?php 
-						$preisAllArtikel+=$_SESSION["warenkorb"][$i]["preis"];
+						$_SESSION["preisAllArtikel"]+=$_SESSION["warenkorb"][$i]["preis"];
 					}?>
 				
 			</div><!-- artikel_container-->
@@ -102,10 +98,10 @@
 							<p>Alle Artikel sind: <?php echo count($_SESSION["warenkorb"]) ?> Stück</p>
 						</div>
 						<div class="kasse__preis">
-							<p>Gesamt Preis alle Artikel sind: <?php echo $preisAllArtikel ?>.00 &euro; </p>
+							<p>Gesamt Preis alle Artikel sind: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro; </p>
 						</div>
 						<div class="zum__kasse__button">
-							<button >Zum Kasse</button>
+							<a href="kasseMoebelPage.php"><button >Zum Kasse</button></a>
 						</div>
 					</div><!-- artikel_container_to_kasse_container-->
 						
@@ -132,9 +128,9 @@
 				<li class="list-inline-item"><a href="#">Terms</a></li>
 				<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
 			</ul>
-			<p class="copyright">Company Name © 2024</p>
+			<p class="copyright">Möbel Shop  © 2024</p>
 		</footer>
-	</div>
+	</div><!--footer-basic-->
 
 
 

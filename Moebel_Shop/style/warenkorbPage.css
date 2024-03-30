@@ -190,6 +190,14 @@ body{
 	width: 50px;
 }
 
+.delete_artikel_icon button{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	border: none;
+	border-radius: 60%;
+}
+
 .delete_artikel_icon img{
 	width: 50px;
 }
@@ -230,8 +238,12 @@ body{
 
 	display: flex;
 	justify-content: center;
+	
 
+}
 
+.zum__kasse__button button:hover{
+	transform: scale(0.95);
 }
 
 .zum__kasse__button button {
@@ -239,9 +251,15 @@ body{
 	padding: 10px;
 
 	width: 150px;
-
+	cursor: pointer;
 }
 
+
+.zum__kasse__button a{
+	text-decoration: none;
+	color: black;
+	
+}
 
 /*---------------------------------------------------------------*/
 

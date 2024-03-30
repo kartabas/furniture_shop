@@ -146,6 +146,7 @@ body{
 .moebel__box{
 	cursor: pointer;
 
+	
 	padding: 10px;
 	margin: 15px;
 	cursor: pointer;
@@ -155,9 +156,13 @@ body{
 	transform: scale(0.95);
 }
 
+
+
 .box__img img {
 	width: 100%;
 	height: 100%;
+	border-radius: 15px;
+	
 }
 
 .box__title  {
@@ -236,7 +241,7 @@ body{
 }
 
 .card__stars img{
-	width: 25px;
+	width: 20px;
 
 }
 

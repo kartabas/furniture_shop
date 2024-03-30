@@ -319,9 +319,9 @@
 				<li class="list-inline-item"><a href="#">Terms</a></li>
 				<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
 			</ul>
-			<p class="copyright">Company Name © 2024</p>
+			<p class="copyright">Möbel Shop  © 2024</p>
 		</footer>
-	</div>
+	</div><!--footer-basic-->
 
 
 
