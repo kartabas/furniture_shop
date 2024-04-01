@@ -140,46 +140,76 @@
 								</form>
 								<?php  
 									}else{
-										echo "Sie haben folgende Bestellung übermittelt: ";
-										echo "</br>";
-										echo "Bestellung für ".$_POST["vorname"]." ".$_POST["nachname"]."die Email lautet ".$_POST["email"] ;
-										echo "</br>";
-										echo " zum ".$_POST["land"].", ".$_POST["stadt"].", ".$_POST["street"]." ".$_POST["home__number"].", ".$_POST["postal_code"]." ";
+										echo "<div class='bestellung__info'>";
+											echo "<p>Sie haben folgende Bestellung übermittelt: </p>";
+											echo "</br>";
+											echo "<p>Bestellung für ".$_POST["vorname"]." ".$_POST["nachname"].",die Email lautet ".$_POST["email"].",</p>";
+											echo "</br>";
+											echo "<p>Lieferung zum ".$_POST["land"].", ".$_POST["stadt"].", ".$_POST["street"]." ".$_POST["home__number"].", ".$_POST["postal_code"]." </p>";
+										
 										?>
 									
 										<div class="artikel_container">
+										<table>
 											<?php  
 											
 											for($i=0;$i<(count($_SESSION["warenkorb"]));++$i){?>
-											<form class="warenkorb__artikel" method="POST" action="deleteArtikel.inc.php">
-												<div class="artikel__box">
+											
+												<!-- <div class="artikel__box"> -->
 													
-													<div class="artikel__box__image">
-														<img src="<?php echo $_SESSION["warenkorb"][$i]["image"] ?>" alt="Bett_1">
-													</div>
-													<div class="artikel__box_info">
-														<div class="artikel__box__title">
-															<h2><?php echo $_SESSION["warenkorb"][$i]["name"] ?></h2>
-														</div>
-														<div class="artikel__box__preis">
-															<p><?php echo $_SESSION["warenkorb"][$i]["preis"] ?>.00 &euro;</p>
-														</div>
-													</div><!-- artikel__box_info-->
+
+													<!-- <div class="artikel__box_info"> -->
+														
+															<tr class="check__table">
+																<td style="width:70%;">
+																	<div class="artikel__box__title">
+																		<h2><?php echo $_SESSION["warenkorb"][$i]["name"] ?></h2>
+																	</div>
+																</td>
+																<td style="width:20%;">
+																	<div class="artikel__box__preis">
+																		<p><?php echo $_SESSION["warenkorb"][$i]["preis"] ?>.00 &euro;</p>
+																	</div>
+																</td>
+															</tr>
+														
+														
+
+													<!-- </div>artikel__box_info -->
 													
-												</div><!-- artikel__box-->
-												</form>
+												<!-- </div>artikel__box -->
+												
 												<?php   } ?>
+												</table>
 										</div><!-- artikel_container-->	
 								<?php 
 
+										
+											echo "</br>";
+											echo "<p>Vielen Dank! Die Session wird beendet.</p>";
+											echo "</br>";
+											$bestellung ="----------------------------------------------";
+											$bestellung .= "\n\nArt-Name;\t\tArt-Preis\n";
+											for($i=0;$i<(count($_SESSION["warenkorb"]));++$i){
+												$bestellung .= $_SESSION['warenkorb'][$i]['name'].";\t\t". $_SESSION['warenkorb'][$i]['preis'].";\n";
+											}
 
-										echo "</br>";
-										echo "Vielen Dank! Die Session wird beendet.";
-										echo "</br>";
-										echo "Die Bestelldaten wurden in der Datei bestellung.csv gespeichert.";
+											$bestellung .= "\nbestellt von \t". $_POST['vorname']." ". $_POST['nachname']."\t ,gesamte Preis:". $_SESSION['preisAllArtikel']."\n";
+											$bestellung .= $_POST['land'].", ".$_POST['stadt'].", ".$_POST['street']." ".$_POST['home__number'].", ".$_POST['postal_code']."\n";
+											$bestellung .="----------------------------------------------\n";
+											if(file_put_contents("bestellung.csv",$bestellung,FILE_APPEND)){
+												echo "<p>Die Bestelldaten wurden in der Datei bestellung.csv gespeichert.</p>";
+											}
+											
+											echo "<div class='start__button'>;
+												<a href='startMoebelPage.php'><button >Start Seite</button></a>";
+											"</div>";
+										echo "</div>";
 
-
-
+										$_SESSION=array();
+										$_SESSION["warenkorb"]=array();
+										$_SESSION["preisAllArtikel"]=array();
+										session_destroy();
 									}
 										
 

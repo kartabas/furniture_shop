@@ -147,6 +147,7 @@ body{
 .middle__container__form{
 	width: 50%;
 	border: 2px solid black;
+	border-radius: 10px;
 
 }
 
@@ -259,22 +260,50 @@ body{
 	padding: 5px;
 }
 
-.bestellung__senden{
-	margin-top: 10px;
-	margin-bottom: 10px;
+.bestellung__senden {
+	margin-top: 20px;
 	display: flex;
 	justify-content: center;
+	
+
+}
+
+.bestellung__senden button:hover{
+	transform: scale(0.96);
+}
+
+.bestellung__senden button {
+	border-radius: 20px;
+	padding: 10px;
+
+	width: 200px;
+	cursor: pointer;
 }
 
 
-.bestellung__senden__button{
-	padding: 15px;
-	border-radius: 15px;
-	border: none;
+.bestellung__senden a{
+	text-decoration: none;
+	color: black;
+	
 }
 
 
 
+
+.bestellung__info{
+	width: 100%;
+
+	padding: 10px;
+	display: grid;
+	grid-template-rows: auto;
+	justify-content: center;
+	
+}
+
+.bestellung__info p{
+	margin: 0;
+	padding: 0;
+}
 
 .artikel_container {
 	width: 100%;
@@ -282,56 +311,66 @@ body{
 
 
 
-}
-.artikel__box {
-	width: 80%;
-	padding: 10px;
-	display: flex;
-	flex-wrap: nowrap;
-
-	height: 120px;
-	border-top: 2px black solid;
-	border-bottom: 2px black solid;
-	margin-bottom: 10px;
-
-	border-radius: 20px;
-	background-color: white;
-	backdrop-filter: blur(50px);
-
-}
-.artikel__box__image {
-	width: 200px;
 
 }
 
-.artikel__box__image img{
-	width: 200px;
 
-}
-
-.artikel__box_info{
+.check__table{
 	width: 100%;
-
-
-	padding-left: 10px;
-
-	overflow: hidden;
-	
 }
+
 
 .artikel__box__title {
-	position: relative;
-	top: -20px;
-	font-size: 18px;
+	text-align: start;
+	font-size: 15px;
 
 }
+
+.artikel__box__title h2 {
+	margin-bottom: 0;
+	font-size: 15px;
+}
+
+
 .artikel__box__preis {
+	text-align:start;
 	position: relative;
-	bottom: 15px;
-	font-size: 22px;
+	bottom: -5px;
+	font-size: 15px;
 
 }
 
+.artikel__box__preis p{
+	margin:0 ;
+
+}
+
+.start__button {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	
+
+}
+
+.start__button button:hover{
+	transform: scale(0.99);
+}
+
+.start__button button {
+	border-radius: 20px;
+	padding: 10px;
+
+	width: 150px;
+	cursor: pointer;
+}
+
+
+.start__button a{
+	text-decoration: none;
+	color: black;
+	
+}
 
 
 /*---------------------------------------------------------------*/
