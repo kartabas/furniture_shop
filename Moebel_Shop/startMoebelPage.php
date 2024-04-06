@@ -131,10 +131,11 @@
 					echo "<div class='card__title'>
 							<p>" . $betten[$i]["name"] . "</p>
 							</div>";
-					echo "<div class='card__stars'>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							</div>";
+					echo "<div class='card__stars'>";
+							for($j=0;$j<$betten[$i]["stars"];$j++){
+								echo "<span><img src='Bilder/icons/star.png' alt=''></span>";
+							}
+					echo "</div>";
 					echo "<div class='card__price'>
 							<h3>" . $betten[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
@@ -164,10 +165,11 @@
 					echo "<div class='card__title'>
 							<p>" . $schraenke[$i]["name"] . "</p>
 							</div>";
-					echo "<div class='card__stars'>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							</div>";
+					echo "<div class='card__stars'>";
+							for($j=0;$j<$schraenke[$i]["stars"];$j++){
+								echo "<span><img src='Bilder/icons/star.png' alt=''></span>";
+							}
+					echo "</div>";
 					echo "<div class='card__price'>
 							<h3>" . $schraenke[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
@@ -199,10 +201,11 @@
 					echo "<div class='card__title'>
 							<p>" . $sessel[$i]["name"] . "</p>
 							</div>";
-					echo "<div class='card__stars'>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							</div>";
+					echo "<div class='card__stars'>";
+							for($j=0;$j<$sessel[$i]["stars"];$j++){
+								echo "<span><img src='Bilder/icons/star.png' alt=''></span>";
+							}
+					echo "</div>";
 					echo "<div class='card__price'>
 							<h3>" . $sessel[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
@@ -236,10 +239,11 @@
 					echo "<div class='card__title'>
 							<p>" . $sofas[$i]["name"] . "</p>
 							</div>";
-					echo "<div class='card__stars'>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							</div>";
+					echo "<div class='card__stars'>";
+							for($j=0;$j<$sofas[$i]["stars"];$j++){
+								echo "<span><img src='Bilder/icons/star.png' alt=''></span>";
+							}
+					echo "</div>";
 					echo "<div class='card__price'>
 							<h3>" . $sofas[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
@@ -271,10 +275,11 @@
 					echo "<div class='card__title'>
 							<p>" . $stuhle[$i]["name"] . "</p>
 							</div>";
-					echo "<div class='card__stars'>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							<span><img src='Bilder/icons/star.png' alt=''></span>
-							</div>";
+					echo "<div class='card__stars'>";
+							for($j=0;$j<$stuhle[$i]["stars"];$j++){
+								echo "<span><img src='Bilder/icons/star.png' alt=''></span>";
+							}
+					echo "</div>";
 					echo "<div class='card__price'>
 							<h3>" . $stuhle[$i]["preis"] . ".00 &euro;</h3>
 							</div>";
