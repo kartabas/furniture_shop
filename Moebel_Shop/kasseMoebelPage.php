@@ -127,7 +127,7 @@
 											</tr>
 											<tr class="choese"> 
 												<td><input type="checkbox" name="zusammenfassung__summe" required></td>
-												<td><p name="zusammenfassung__summe" >Gesamtpreis: <?php echo $_SESSION["preisAllArtikel"]; ?>.00 &euro;</p></td>
+												<td><p name="zusammenfassung__summe" >Gesamtpreis beträgt: <?php echo $_SESSION["preisAllArtikel"]; ?>.00 &euro;</p></td>
 											</tr>
 										</table>
 									</div>
@@ -150,6 +150,7 @@
 										?>
 									
 										<div class="artikel_container">
+											<h4>Ihre Zetel:</h4>
 										<table>
 											<?php  
 											
@@ -181,6 +182,7 @@
 												
 												<?php   } ?>
 												</table>
+												<h5>Gesamt Preis aller Artikel beträgt: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro;</h5>
 										</div><!-- artikel_container-->	
 								<?php 
 
@@ -191,7 +193,7 @@
 											$bestellung ="----------------------------------------------";
 											$bestellung .= "\n\nArt-Name;\t\tArt-Preis\n";
 											for($i=0;$i<(count($_SESSION["warenkorb"]));++$i){
-												$bestellung .= $_SESSION['warenkorb'][$i]['name'].";\t\t". $_SESSION['warenkorb'][$i]['preis'].";\n";
+												$bestellung .= $_SESSION['warenkorb'][$i]['name'].";\t\t". $_SESSION['warenkorb'][$i]['preis']."\n";
 											}
 
 											$bestellung .= "\nbestellt von \t". $_POST['vorname']." ". $_POST['nachname']."\t ,gesamte Preis:". $_SESSION['preisAllArtikel']."\n";
@@ -201,8 +203,8 @@
 												echo "<p>Die Bestelldaten wurden in der Datei bestellung.csv gespeichert.</p>";
 											}
 											
-											echo "<div class='start__button'>;
-												<a href='startMoebelPage.php'><button >Start Seite</button></a>";
+											echo "<div class='start__button'>
+												<a href='startMoebelPage.php'><button class='start__button__start' >Start Seite</button></a>";
 											"</div>";
 										echo "</div>";
 

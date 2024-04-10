@@ -13,7 +13,7 @@
 	  
 			$_SESSION["warenkorb"][] = json_decode( $_POST["artikel"],true);
 	  
-			// Redirect back to the previous page or any other page
+			//Redirect 
 			header("Location: startMoebelPage.php");
 			exit();
 	  }
@@ -30,7 +30,7 @@
 	  
 			$_SESSION["warenkorb"][] = json_decode( $_POST["artikel"],true);
 	  
-			// Redirect back to the previous page or any other page
+
 			header("Location: startMoebelPage.php");
 			exit();
 	  }

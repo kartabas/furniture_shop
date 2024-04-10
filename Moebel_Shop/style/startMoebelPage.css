@@ -6,7 +6,7 @@ body{
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
-	background-color: wheat;
+	
 
 }
 
@@ -14,7 +14,7 @@ body{
 .header{
 	height: 78px;
 	display: flex;
-	background-color: aquamarine;
+	background-color:#B1B2FF;
 
 }
 
@@ -23,7 +23,7 @@ body{
 	padding: 5px;
 	width: 20%;
 	height: 80px;
-	background-color: red;
+	background-color:#B1B2FF;
 	
 
 }
@@ -44,7 +44,7 @@ body{
 
 	padding: 5px;
 
-	background-color:blue;
+	background-color:#B1B2FF;
 }
 
 .menu{
@@ -118,11 +118,11 @@ body{
 .main{
 	width: 100%;
 	margin-top: 10px;
-	margin-bottom: 20px;
+	
 
 	height: auto;
 
-	background-color:blueviolet;
+	background-color:#D2DAFF;
 }
 
 .main__container{
@@ -180,7 +180,7 @@ body{
 
 .middle{
 	height: auto;
-	background-color: brown;
+	background-color: #AAC4FF;
 	}
 
 
@@ -190,7 +190,7 @@ body{
 	padding: 10px;
 	margin: 15px;
 
-	background-color: aqua;
+	background-color: #AAC4FF;
 }
 
 .middle__container__cards{
@@ -209,8 +209,9 @@ body{
 	margin-top: 10px;
 	margin-left: 10px;
 
-	background-color: blanchedalmond;
-	border:1px black solid ;
+	background-color: #D2DAFF;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	
 	border-radius:10px ;
 
 
@@ -261,8 +262,8 @@ body{
 .card__buy_button {
 	width: 60px;
 	height: 60px;
-
-	background-color: white;
+	background-color: #D2DAFF;
+	
 
 	border-radius: 40px;
 	border: none;
@@ -271,7 +272,7 @@ body{
 
 .card__buy_button:hover{
 	transform: scale(0.9);
-
+	background-color: #AAC4FF;
 }
 
 
@@ -293,8 +294,8 @@ body{
 
 .footer-basic {
 	padding:40px 0;
-	background-color:#ffffff;
-	color:#4b4c4d;
+	background-color:#EEF1FF;
+	color:black;
  }
 
  .list-inline{
@@ -348,7 +349,7 @@ body{
 	margin-top:15px;
 	text-align:center;
 	font-size:13px;
-	color:#aaa;
+	color:black;
 	margin-bottom:0;
  }
 

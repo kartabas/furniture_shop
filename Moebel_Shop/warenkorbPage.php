@@ -98,7 +98,7 @@
 							<p>Alle Artikel sind: <?php echo count($_SESSION["warenkorb"]) ?> Stück</p>
 						</div>
 						<div class="kasse__preis">
-							<p>Gesamt Preis alle Artikel sind: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro; </p>
+							<p>Gesamt Preis aller Artikel beträgt: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro; </p>
 						</div>
 						<div class="zum__kasse__button">
 							<a href="kasseMoebelPage.php"><button >Zum Kasse</button></a>

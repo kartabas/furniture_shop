@@ -58,7 +58,7 @@ $sessel = [
 	[
 		'image' => "Bilder/Sessel_Bilder/Sessel_3.jpg",
 		'name' => 'Fernsehsessel Leder 9773',
-		'stars' => 4,
+		'stars' => 5,
 		'preis' => 1439
 	]
 ];
@@ -104,3 +104,16 @@ $stuhle = [
 		'preis' => 49
 	]
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
