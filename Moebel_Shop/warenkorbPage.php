@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="./Bilder/icons/bedroom.ico">
 	<link rel="stylesheet" href="style/warenkorbPage.css">
 	<title>Warenkorb</title>
 </head>
@@ -30,19 +31,19 @@
 
 		<div class="nav__bar">
 			<ul class="menu">
-				<li class="nav_title"> <a href="#">Top Name1</a></li>
-				<li class="nav_title"> <a href="#">Top Name2</a></li>
-				<li class="nav_title"> <a href="#">Top Name3</a></li>
-				<li class="nav_title"> <a href="#">Top Name4</a></li>
+				<li class="nav_title"> <a href="#Info">Info</a></li>
+				<li class="nav_title"> <a href="#Über_uns">Über uns</a></li>
+				<li class="nav_title"> <a href="#Nachrichten">Nachrichten</a></li>
+				<li class="nav_title"> <a href="#Neue_Artikel">Neue Artikel</a></li>
 
 				<div class="warenkorb__box">
 					<li class="warenkorb__icon"> <a href="warenkorbPage.php"><img src="Bilder/icons/warenkorb.png" alt="Warenkorb"></a></li>
-					<?php 
-						if(isset($_SESSION["warenkorb"])) {
-							echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
-						} else {
-    						echo '<div class="number__artikel">0</div>';
-						}
+					<?php
+					if (isset($_SESSION["warenkorb"])) {
+						echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
+					} else {
+						echo '<div class="number__artikel">0</div>';
+					}
 					?>
 				</div>
 

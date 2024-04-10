@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="./Bilder/icons/bedroom.ico">
 	<link rel="stylesheet" href="style/kasseMoebelPage.css">
 	<title>Kasse</title>
 </head>
@@ -29,19 +30,19 @@
 
 		<div class="nav__bar">
 			<ul class="menu">
-				<li class="nav_title"> <a href="#">Top Name1</a></li>
-				<li class="nav_title"> <a href="#">Top Name2</a></li>
-				<li class="nav_title"> <a href="#">Top Name3</a></li>
-				<li class="nav_title"> <a href="#">Top Name4</a></li>
+				<li class="nav_title"> <a href="#Info">Info</a></li>
+				<li class="nav_title"> <a href="#Über_uns">Über uns</a></li>
+				<li class="nav_title"> <a href="#Nachrichten">Nachrichten</a></li>
+				<li class="nav_title"> <a href="#Neue_Artikel">Neue Artikel</a></li>
 
 				<div class="warenkorb__box">
 					<li class="warenkorb__icon"> <a href="warenkorbPage.php"><img src="Bilder/icons/warenkorb.png" alt="Warenkorb"></a></li>
-					<?php 
-						if(isset($_SESSION["warenkorb"])) {
-							echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
-						} else {
-    						echo '<div class="number__artikel">0</div>';
-						}
+					<?php
+					if (isset($_SESSION["warenkorb"])) {
+						echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
+					} else {
+						echo '<div class="number__artikel">0</div>';
+					}
 					?>
 				</div>
 
@@ -107,12 +108,13 @@
 
 										<div class="bestellung__form__location__home__number">
 											<p>Hausnummer</p>
-											<input type="text" name="home__number" placeholder="Hausnummer" size="25" required>
+											<input type="text" name="home__number" placeholder="Hausnummer"  size="25" inputmode="numeric"   maxlength="3" required>
 										</div>
+										
 
 										<div class="bestellung__form__location__postal_code">
 											<p>Postazahl</p>
-											<input type="text" name="postal_code" placeholder="Postazahl" size="15" required>
+											<input type="text" name="postal_code" placeholder="Postazahl" size="15" inputmode="numeric"   maxlength="5" required>
 										</div>
 
 									</div><!-- bestellung__form__location-->
@@ -164,7 +166,7 @@
 															<tr class="check__table">
 																<td style="width:70%;">
 																	<div class="artikel__box__title">
-																		<h2><?php echo $_SESSION["warenkorb"][$i]["name"] ?></h2>
+																		<p><?php echo $_SESSION["warenkorb"][$i]["name"] ?></p>
 																	</div>
 																</td>
 																<td style="width:20%;">
@@ -182,7 +184,7 @@
 												
 												<?php   } ?>
 												</table>
-												<h5>Gesamt Preis aller Artikel beträgt: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro;</h5>
+												<h4>Gesamt Preis aller Artikel beträgt: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro;</h4>
 										</div><!-- artikel_container-->	
 								<?php 
 
@@ -196,7 +198,7 @@
 												$bestellung .= $_SESSION['warenkorb'][$i]['name'].";\t\t". $_SESSION['warenkorb'][$i]['preis']."\n";
 											}
 
-											$bestellung .= "\nbestellt von \t". $_POST['vorname']." ". $_POST['nachname']."\t ,gesamte Preis:". $_SESSION['preisAllArtikel']."\n";
+											$bestellung .= "\nbestellt von \t". $_POST['vorname']." ;\t". $_POST['nachname'].";\t\t".$_POST['email']."\t ,gesamte Preis:;\t". $_SESSION['preisAllArtikel']."\n";
 											$bestellung .= $_POST['land'].", ".$_POST['stadt'].", ".$_POST['street']." ".$_POST['home__number'].", ".$_POST['postal_code']."\n";
 											$bestellung .="----------------------------------------------\n";
 											if(file_put_contents("bestellung.csv",$bestellung,FILE_APPEND)){
