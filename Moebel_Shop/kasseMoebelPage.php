@@ -13,7 +13,6 @@
 <?php 
 	session_start();
 	include("warenkorbDatenbank.inc.php");
-
 	// echo "<pre>";
 	// print_r( $_SESSION["warenkorb"]);
 	// echo "</pre>";
@@ -40,8 +39,13 @@
 					<?php
 					if (isset($_SESSION["warenkorb"])) {
 						echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
+						
 					} else {
-						echo '<div class="number__artikel">0</div>';
+						if(count($_SESSION["warenkorb"]) == 0){
+							echo '<div class="number__artikel">0</div>';
+						}else{
+							echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
+						}
 					}
 					?>
 				</div>

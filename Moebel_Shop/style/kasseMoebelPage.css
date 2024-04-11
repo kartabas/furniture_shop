@@ -12,6 +12,13 @@ body{
 }
 
 
+input:invalid {
+	border: 2px solid red;
+ }
+ input:valid {
+	border: 2px solid green;
+ }
+
 .header{
 	position: sticky;
 	top: 0;
@@ -170,7 +177,7 @@ body{
 	padding: 10px;
 	
 	background-color: #D2DAFF;
-	border: none;
+	/* border: none; */
 	border-radius: 8px;
 }
 
@@ -492,4 +499,30 @@ body{
  }
 
 
+
+ /* For mobile devices */
+@media only screen and (max-width: 600px) {
+	body{
+		background-color: #D2DAFF;
+	}
+	.header{
+		height: 250px;
+	}
+ }
+ 
+ /* For tablets */
+ @media only screen and (min-width: 600px) and (max-width: 1024px) {
+	body{
+		background-color: #D2DAFF;
+	}
+	.header{
+		height: 120px;
+	}
+
+	.warenkorb__box {
+		margin-left: 15px;
+	
+	}
+ }
+ 
 

@@ -42,7 +42,7 @@
 
 	include("artikle_shop.inc.php");
 	include("warenkorbDatenbank.inc.php");
-
+	
 	// echo "<pre>";
 	// print_r($warenkorb);
 	// echo "</pre>";
@@ -65,8 +65,11 @@
 					<?php
 					if (isset($_SESSION["warenkorb"])) {
 						echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
+						
 					} else {
+
 						echo '<div class="number__artikel">0</div>';
+
 					}
 					?>
 				</div>
@@ -337,12 +340,13 @@
 
 	<script src="js/startMoebelPage.js"></script>
 	<script>
+		
 		let ALL_ARTIKLE = <?php echo count($_SESSION["warenkorb"]); ?>;
 		$(document).ready(function() {
 			$(".card__buy_button").click(function() {
-
+				
 				ALL_ARTIKLE++;
-
+				console.log("click");
 				if ($(".number__artikel").val() == '0') {
 					$(".number__artikel").html(0);
 				} else {
