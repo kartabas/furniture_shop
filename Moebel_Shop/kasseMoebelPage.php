@@ -154,11 +154,7 @@
 											<?php  
 											
 											for($i=0;$i<(count($_SESSION["warenkorb"]));++$i){?>
-											
-												<!-- <div class="artikel__box"> -->
-													
 
-													<!-- <div class="artikel__box_info"> -->
 														
 															<tr class="check__table">
 																<td style="width:70%;">
@@ -173,11 +169,6 @@
 																</td>
 															</tr>
 														
-														
-
-													<!-- </div>artikel__box_info -->
-													
-												<!-- </div>artikel__box -->
 												
 												<?php   } ?>
 												</table>
