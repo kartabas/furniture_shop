@@ -7,7 +7,7 @@ $(document).ready(function () {
 	$(".warenkorb__icon").click(function (event) {
 		if ($(".number__artikel").text() === '0') {
 			event.preventDefault();
-			alert("Sie können  auf Warenkorb nicht klicken ,weil sie 0 Artikel haben oder einfach sie Seite neu laden !!");
+			alert("Sie können  auf Warenkorb nicht klicken ,weil sie 0 Artikel haben oder einfach sie Seite aktualisieren !!");
 		}
 	});
 
