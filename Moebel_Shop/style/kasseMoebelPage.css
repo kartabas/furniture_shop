@@ -13,9 +13,13 @@ body{
 
 
 .header{
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	
 	height: 78px;
 	display: flex;
-	background-color: aquamarine;
+	background-color:#B1B2FF;
 
 }
 
@@ -24,8 +28,7 @@ body{
 	padding: 5px;
 	width: 20%;
 	height: 80px;
-	background-color: red;
-	
+	background-color:#B1B2FF;
 
 }
 .header__tittle h1{
@@ -44,8 +47,7 @@ body{
 	width: 80%;
 
 	padding: 5px;
-
-	background-color:blue;
+	background-color:#B1B2FF;
 }
 
 .menu{
@@ -72,7 +74,7 @@ body{
 }
 
 .nav_title a:hover{
-	color: wheat;
+	color: white;;
 	text-decoration: underline;
 }
 
@@ -119,7 +121,7 @@ body{
 
 .middle{
 	height: auto;
-	background-color: brown;
+	background-color: #AAC4FF;
 	}
 
 
@@ -129,7 +131,7 @@ body{
 	padding: 10px;
 	margin: 15px;
 
-	background-color: aqua;
+	background-color: #AAC4FF;
 }
 
 
@@ -146,9 +148,10 @@ body{
 
 .middle__container__form{
 	width: 50%;
-	border: 2px solid black;
-	border-radius: 10px;
-
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	padding: 4px;
+	background-color: white;
 }
 
 
@@ -160,11 +163,13 @@ body{
 .bestellung__form{
 	padding: 15px;
 	flex-wrap: nowrap;
+	background-color: white;
 }
 
 .bestellung__form input{
 	padding: 10px;
-	background-color: rgb(255, 243, 220);
+	
+	background-color: #D2DAFF;
 	border: none;
 	border-radius: 8px;
 }
@@ -175,6 +180,7 @@ body{
 	margin-bottom: 20px;
 
 }
+
 
 .bestellung__form__name p{
 	margin: 0;
@@ -281,6 +287,33 @@ body{
 }
 
 
+
+.bestellung__senden  .bestellung__senden__button {
+	align-items: center;
+	background: #D2DAFF;
+	border: 0 solid #E2E8F0;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-sizing: border-box;
+	color: #1A202C;
+	display: inline-flex;
+	font-family: Inter, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	height: 56px;
+	justify-content: center;
+	line-height: 24px;
+	overflow-wrap: break-word;
+	padding: 24px;
+	text-decoration: none;
+	width: auto;
+	border-radius: 8px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+ }
+
+
 .bestellung__senden a{
 	text-decoration: none;
 	color: black;
@@ -326,7 +359,7 @@ body{
 
 }
 
-.artikel__box__title h2 {
+.artikel__box__title p {
 	margin-bottom: 0;
 	font-size: 15px;
 }
@@ -335,7 +368,7 @@ body{
 .artikel__box__preis {
 	text-align:start;
 	position: relative;
-	bottom: -5px;
+	
 	font-size: 15px;
 
 }
@@ -357,13 +390,33 @@ body{
 	transform: scale(0.99);
 }
 
-.start__button button {
-	border-radius: 20px;
-	padding: 10px;
 
-	width: 150px;
+
+.start__button  .start__button__start {
+	align-items: center;
+	background: #D2DAFF;
+	border: 0 solid #E2E8F0;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-sizing: border-box;
+	color: #1A202C;
+	display: inline-flex;
+	font-family: Inter, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	height: 56px;
+	justify-content: center;
+	line-height: 24px;
+	overflow-wrap: break-word;
+	padding: 24px;
+	text-decoration: none;
+	width: auto;
+	border-radius: 8px;
 	cursor: pointer;
-}
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+ }
+
 
 
 .start__button a{

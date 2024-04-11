@@ -4,18 +4,20 @@ body{
 
 
 	min-height: 100vh;
-
+	
 	display: grid;
 	grid-template-rows: auto 0.4fr auto ;
-	background-color: wheat;
-
 }
 
 
 .header{
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	
 	height: 78px;
 	display: flex;
-	background-color: aquamarine;
+	background-color: #B1B2FF;
 
 }
 
@@ -24,7 +26,7 @@ body{
 	padding: 5px;
 	width: 20%;
 	height: 80px;
-	background-color: red;
+	background-color: #B1B2FF;
 	
 
 }
@@ -45,7 +47,7 @@ body{
 
 	padding: 5px;
 
-	background-color:blue;
+	background-color:#B1B2FF;
 }
 
 .menu{
@@ -72,7 +74,7 @@ body{
 }
 
 .nav_title a:hover{
-	color: wheat;
+	color: white;;
 	text-decoration: underline;
 }
 
@@ -117,7 +119,7 @@ body{
 
 .middle{
 	height: auto;
-	background-color: wheat;
+	background-color: #AAC4FF;
 	}
 
 
@@ -129,6 +131,7 @@ body{
 	display: flex;
 	flex-wrap: nowrap;
 
+	background-color: #AAC4FF;
 
 }
 
@@ -144,9 +147,11 @@ body{
 	display: flex;
 	flex-wrap: nowrap;
 
-	border-top: 2px black solid;
-	border-bottom: 2px black solid;
+	height: 150px;
+	
+
 	margin-bottom: 10px;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 	border-radius: 20px;
 	background-color: white;
@@ -154,12 +159,14 @@ body{
 
 }
 .artikel__box__image {
-	width: 300px;
+	height: 150px;
+
 
 }
 
 .artikel__box__image img{
-	width: 300px;
+	height: 150px;
+
 
 }
 
@@ -188,15 +195,25 @@ body{
 
 .delete_artikel_icon{
 	width: 50px;
+	position: relative;
+	top: -25px;
 }
 
 .delete_artikel_icon button{
 	width: 50px;
 	height: 50px;
 	padding: 0;
+
 	border: none;
 	border-radius: 60%;
+
+	
 }
+
+
+
+
+
 
 .delete_artikel_icon img{
 	width: 50px;
@@ -209,15 +226,19 @@ body{
 .artikel_container_to_kasse{
 	width: 40%;
 	height: auto;
-	padding: 5px;
+
+	padding: 0 5px;
 
 }
 
 .artikel_container_to_kasse_container{
+	
 	padding: 10px;
+	padding-bottom: 20px;
 	height: 300px;
 	border-radius: 20px;
 	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .kasse__tittle {
@@ -246,13 +267,34 @@ body{
 	transform: scale(0.95);
 }
 
-.zum__kasse__button button {
-	border-radius: 20px;
-	padding: 10px;
 
-	width: 150px;
+
+
+
+.zum__kasse__button button {
+	align-items: center;
+	background: #D2DAFF;
+	border: 0 solid #E2E8F0;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-sizing: border-box;
+	color: #1A202C;
+	display: inline-flex;
+	font-family: Inter, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	height: 56px;
+	justify-content: center;
+	line-height: 24px;
+	overflow-wrap: break-word;
+	padding: 24px;
+	text-decoration: none;
+	width: auto;
+	border-radius: 8px;
 	cursor: pointer;
-}
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+ }
 
 
 .zum__kasse__button a{
