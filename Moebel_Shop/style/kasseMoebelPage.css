@@ -7,7 +7,7 @@ body{
 
 	display: grid;
 	grid-template-rows: auto 0.4fr auto ;
-	background-color: wheat;
+	background-color: #AAC4FF;
 
 }
 
@@ -15,6 +15,7 @@ body{
 input:invalid {
 	border: 2px solid red;
  }
+ 
  input:valid {
 	border: 2px solid green;
  }
@@ -500,29 +501,126 @@ input:invalid {
 
 
 
- /* For mobile devices */
+/* For mobile devices */
 @media only screen and (max-width: 600px) {
 	body{
+		min-width: 75%;
+		width: 100%;
 		background-color: #D2DAFF;
 	}
 	.header{
-		height: 250px;
+
+		height: 175px;
 	}
+	.header__tittle{
+		width: 37%;
+	}
+
+	.menu{
+		padding: 0;
+	}
+
+	.nav_title{
+		margin-left: 0;
+	}
+
+	.warenkorb__box{
+		margin-left: 0;
+	}
+
+	.middle__container__form{
+		width: 100%;
+		padding-right: 10px;
+	}
+
+	.bestellung__form__location{
+		display: block;
+
+	}
+
+	.bestellung__form__email input{
+		width: 230px;
+	}
+
+	.bestellung__form__name{
+		display: grid;
+	}
+	.bestellung__form__nachname{
+		left: 0;
+	}
+
+	.artikel_container h4{
+		font-size: 15px;
+	}
+
+
  }
  
  /* For tablets */
  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+	
 	body{
+		min-width: 75%;
+		width: 100%;
 		background-color: #D2DAFF;
 	}
+
 	.header{
-		height: 120px;
+		height:96px;
 	}
 
-	.warenkorb__box {
-		margin-left: 15px;
-	
+
+	.menu{
+		padding: 0;
 	}
+
+	.nav_title{
+		margin-left: 0;
+	}
+
+	.warenkorb__box{
+		margin-left: 0;
+	}
+
+	.middle__container__form{
+		width: 100%;
+	}
+
+	.bestellung__form__location{
+		display: grid;
+
+	}
+
+	.bestellung__form__email input{
+		width: 230px;
+	}
+
+	.bestellung__form__name{
+		display: flex;
+	}
+	.bestellung__form__nachname{
+		left: 0;
+	}
+
+	
+	.bestellung__form__location__stadt{
+		margin-bottom: 15px;
+		padding-left: 5px;
+	}
+	
+	.bestellung__form__location__street{
+		margin-bottom: 15px;
+		padding-left: 2px;
+	}
+	
+
+	
+	
+	.bestellung__form__location__postal_code{
+		margin-bottom: 15px;
+		padding-left: 2px;
+	}
+
  }
  
 

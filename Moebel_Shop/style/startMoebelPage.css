@@ -223,6 +223,12 @@ body{
 	flex-direction: column;
 }
 
+.box__card:hover{
+
+	transform: scale(1.02);
+	filter: brightness(99%);
+}
+
 .card_img{
 	display: flex;
 	justify-content:flex-start;

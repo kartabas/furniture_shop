@@ -19,9 +19,6 @@
 	// print_r( $_SESSION["warenkorb"]);
 	// echo "</pre>";
 	
-
-
-	
 ?>
 
 <div class="header">

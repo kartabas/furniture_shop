@@ -103,6 +103,11 @@ body{
 	background-color: red;
 }
 
+.warenkorb__artikel:hover{
+	transform: scale(1.001);
+	
+}
+
 
 
 .warenkorb__icon a{
@@ -123,7 +128,7 @@ body{
 	}
 
 
-
+	
 
 .middle__container{
 	padding: 10px;
