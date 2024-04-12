@@ -1,5 +1,5 @@
 # furniture_shop
-[(/Moebel_Shop/Bilder/site_img/1.png)]
+![1](/Moebel_Shop/Bilder/site_img/1.png)
 [(/Moebel_Shop/Bilder/site_img/2.png)]
 [(/Moebel_Shop/Bilder/site_img/3.png)]
 [(/Moebel_Shop/Bilder/site_img/4.png)]
