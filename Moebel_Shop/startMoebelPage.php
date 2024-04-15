@@ -42,7 +42,7 @@
 
 	include("artikle_shop.inc.php");
 	include("warenkorbDatenbank.inc.php");
-	
+
 	// echo "<pre>";
 	// print_r($warenkorb);
 	// echo "</pre>";
@@ -65,11 +65,9 @@
 					<?php
 					if (isset($_SESSION["warenkorb"])) {
 						echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
-						
 					} else {
 
 						echo '<div class="number__artikel">0</div>';
-
 					}
 					?>
 				</div>
@@ -296,7 +294,7 @@
 					echo "<div class='card__buy'>";
 					?>
 					<button class='card__buy_button' type="button" name="submit_button" value="<?php echo htmlspecialchars(json_encode($stuhle[$i])); ?>" onclick="clickOnArtikel(this.value)">
-						<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
+						<img class='card__buy_button_img' src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
 					</button>
 
 					<?php
@@ -340,13 +338,21 @@
 
 	<script src="js/startMoebelPage.js"></script>
 	<script>
-		
-		let ALL_ARTIKLE = <?php echo count($_SESSION["warenkorb"]); ?>;
+		let default_count = 0;
+		let ALL_ARTIKLE = <?php
+								if (isset($_SESSION["warenkorb"])) {
+									echo count($_SESSION["warenkorb"]);
+								} else {
+									echo 0;
+								}
+								?>;
 		$(document).ready(function() {
 			$(".card__buy_button").click(function() {
-				
+				default_count++;
+
 				ALL_ARTIKLE++;
 				console.log("click");
+				$(".number__artikel").html(default_count);
 				if ($(".number__artikel").val() == '0') {
 					$(".number__artikel").html(0);
 				} else {
