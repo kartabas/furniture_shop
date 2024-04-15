@@ -308,6 +308,16 @@ body{
 	
 }
 
+
+.alert_text{
+	position: absolute;
+	top: -50px;
+	color: red;
+	
+	font-weight: bold;
+	z-index: 2;
+}
+
 /*---------------------------------------------------------------*/
 
 

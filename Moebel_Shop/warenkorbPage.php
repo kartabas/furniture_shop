@@ -98,8 +98,14 @@
 						<div class="kasse__preis">
 							<p>Gesamt Preis aller Artikel beträgt: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro; </p>
 						</div>
+						
 						<div class="zum__kasse__button">
-							<a href="kasseMoebelPage.php"><button >Zum Kasse</button></a>
+							<div class="alert_text"></div>
+							<?php if(count($_SESSION["warenkorb"])== 0){?>
+								<a href="#"><button onclick="alertInWarenkorb()">Zum Kasse</button></a>
+							<?php }else{?>
+								<a href="kasseMoebelPage.php"><button  class="zum__kasse__button_click">Zum Kasse</button></a>
+							<?php }?>
 						</div>
 					</div><!-- artikel_container_to_kasse_container-->
 						
