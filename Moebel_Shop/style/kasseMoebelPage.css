@@ -6,6 +6,7 @@ body{
 	min-height: 100vh;
 
 	display: grid;
+	/* "grid-template-rows" dient zu höhe zwischen div Blöcken gleich machen  */
 	grid-template-rows: auto 0.4fr auto ;
 	background-color: #AAC4FF;
 
@@ -501,7 +502,7 @@ input:invalid {
 
 
 
-/* For mobile devices */
+/* Für Handy Geräten */
 @media only screen and (max-width: 600px) {
 	body{
 		min-width: 75%;
@@ -556,7 +557,7 @@ input:invalid {
 
  }
  
- /* For tablets */
+ /* Für Tablet Geräten */
  @media only screen and (min-width: 600px) and (max-width: 1024px) {
 	
 	body{

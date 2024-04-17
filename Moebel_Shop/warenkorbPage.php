@@ -57,6 +57,7 @@
 
 			<div class="artikel_container">
 				<?php  
+				//Ausgibt alle Artikel 
 				$_SESSION["preisAllArtikel"] = 0;
 				for($i=0;$i<(count($_SESSION["warenkorb"]));++$i){?>
 				<form class="warenkorb__artikel" method="POST" action="deleteArtikel.inc.php">

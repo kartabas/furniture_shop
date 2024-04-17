@@ -386,7 +386,7 @@ body{
 
 
 
-/* For mobile devices */
+/* Für Handy Geräten */
 @media only screen and (max-width: 600px) {
 	body{
 		min-width: 75%;
@@ -464,7 +464,7 @@ body{
 
  }
  
- /* For tablets */
+  /* Für Tablet Geräten */
  @media only screen and (min-width: 600px) and (max-width: 1024px) {
 	
 	body{

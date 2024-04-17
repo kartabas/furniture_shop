@@ -15,6 +15,7 @@
 <body>
 	<script src="js/Biblioteken/jquery-3.7.1.min.js"></script>
 	<script>
+		//Übertragung die daten von Artikel
 		function clickOnArtikel(item) {
 			$.ajax({
 				type: "POST",
@@ -63,6 +64,7 @@
 				<div class="warenkorb__box">
 					<li class="warenkorb__icon"> <a href="warenkorbPage.php"><img src="Bilder/icons/warenkorb.png" alt="Warenkorb"></a></li>
 					<?php
+					//Überprüfung die "warenkorb"  , ob die Artikel in "warenkorb" sind und wie viel gesamt die Artikel 
 					if (isset($_SESSION["warenkorb"])) {
 						echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
 					} else {
@@ -128,7 +130,7 @@
 					</div>
 					<div class="box__title">
 						<span class="box__title__text">Betten</span>
-					</div>
+					</div><!--moebel__box-->
 
 
 				</div><!--moebel__box-->
@@ -143,8 +145,9 @@
 		<div class="middle__container">
 
 			<div class="middle__container__cards">
-
+				<!--Ausgabe alle Artikel von Array Betten -->
 				<?php for ($i = 0; $i < count($betten); $i++) { ?>
+
 					<?php
 					echo "<div class='box__card box__card_betten'>";
 
@@ -163,7 +166,11 @@
 							<h3>" . $betten[$i]["preis"] . ",00 &euro;</h3>
 							</div>";
 					echo "<div class='card__buy'>";
+
+					// "htmlspecialchars" dient ,um alle Daten mit dem Zeichen übertragen werden 
+					// "json_encode" dient , um die array Daten in JSON zu umwandeln    
 					?>
+
 					<button class='card__buy_button' type="button" name="submit_button" value="<?php echo htmlspecialchars(json_encode($betten[$i])); ?>" onclick="clickOnArtikel(this.value)">
 						<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
 					</button>
@@ -175,6 +182,7 @@
 					?>
 				<?php  } ?>
 
+				<!--Ausgabe alle Artikel von Array Schränke -->
 				<?php for ($i = 0; $i < count($schraenke); $i++) { ?>
 
 					<?php
@@ -195,6 +203,9 @@
 							<h3>" . $schraenke[$i]["preis"] . ",00 &euro;</h3>
 							</div>";
 					echo "<div class='card__buy'>";
+
+					// "htmlspecialchars" dient ,um alle Daten mit dem Zeichen übertragen werden 
+					// "json_encode" dient , um die array Daten in JSON zu umwandeln    
 					?>
 					<button class='card__buy_button' type="button" name="submit_button" value="<?php echo htmlspecialchars(json_encode($schraenke[$i])); ?>" onclick="clickOnArtikel(this.value)">
 						<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
@@ -210,6 +221,7 @@
 					?>
 				<?php } ?>
 
+				<!--Ausgabe alle Artikel von Array Sessel -->
 				<?php for ($i = 0; $i < count($sessel); $i++) { ?>
 					<?php
 					echo "<div class='box__card box__card_sessel'>";
@@ -229,6 +241,9 @@
 							<h3>" . $sessel[$i]["preis"] . ",00 &euro;</h3>
 							</div>";
 					echo "<div class='card__buy'>";
+
+					// "htmlspecialchars" dient ,um alle Daten mit dem Zeichen übertragen werden 
+					// "json_encode" dient , um die array Daten in JSON zu umwandeln  
 					?>
 
 					<button class='card__buy_button' type="button" name="submit_button" value="<?php echo htmlspecialchars(json_encode($sessel[$i])); ?>" onclick="clickOnArtikel(this.value)">
@@ -242,7 +257,7 @@
 				<?php } ?>
 
 
-
+				<!--Ausgabe alle Artikel von Array Sofas -->
 				<?php for ($i = 0; $i < count($sofas); $i++) { ?>
 					<?php
 					echo "<div class='box__card box__card_sofas'>";
@@ -262,6 +277,9 @@
 							<h3>" . $sofas[$i]["preis"] . ",00 &euro;</h3>
 							</div>";
 					echo "<div class='card__buy'>";
+
+					// "htmlspecialchars" dient ,um alle Daten mit dem Zeichen übertragen werden 
+					// "json_encode" dient , um die array Daten in JSON zu umwandeln  
 					?>
 					<button class='card__buy_button' type="button" name="submit_button" value="<?php echo htmlspecialchars(json_encode($sofas[$i])); ?>" onclick="clickOnArtikel(this.value)">
 						<img src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
@@ -273,6 +291,7 @@
 					?>
 				<?php } ?>
 
+				<!--Ausgabe alle Artikel von Array Schtühle -->
 				<?php for ($i = 0; $i < count($stuhle); $i++) { ?>
 					<?php
 					echo "<div class='box__card box__card_stuhle'>";
@@ -291,7 +310,11 @@
 					echo "<div class='card__price'>
 							<h3>" . $stuhle[$i]["preis"] . ",00 &euro;</h3>
 							</div>";
+
 					echo "<div class='card__buy'>";
+
+					// "htmlspecialchars" dient ,um alle Daten mit dem Zeichen übertragen werden 
+					// "json_encode" dient , um die array Daten in JSON zu umwandeln  
 					?>
 					<button class='card__buy_button' type="button" name="submit_button" value="<?php echo htmlspecialchars(json_encode($stuhle[$i])); ?>" onclick="clickOnArtikel(this.value)">
 						<img class='card__buy_button_img' src='Bilder/icons/zum-warenkorb-hinzufugen.png' alt=''>
@@ -352,7 +375,10 @@
 
 				ALL_ARTIKLE++;
 				console.log("click");
+
+				//Wenn man drückt die Taste , dann die "number__artikel" ändern wird
 				$(".number__artikel").html(default_count);
+
 				if ($(".number__artikel").val() == '0') {
 					$(".number__artikel").html(0);
 				} else {

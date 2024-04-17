@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<?php 
+	<?php
 	session_start();
 	include("warenkorbDatenbank.inc.php");
 	// echo "<pre>";
@@ -19,10 +19,10 @@
 
 	//$_SESSION["preisAllArtikel"];
 
-?>
+	?>
 
 
-<div class="header">
+	<div class="header">
 		<div class="header__tittle">
 			<h1><a href="startMoebelPage.php">Möbel Shop</a></h1>
 		</div>
@@ -39,11 +39,10 @@
 					<?php
 					if (isset($_SESSION["warenkorb"])) {
 						echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
-						
 					} else {
-						if(count($_SESSION["warenkorb"]) == 0){
+						if (count($_SESSION["warenkorb"]) == 0) {
 							echo '<div class="number__artikel">0</div>';
-						}else{
+						} else {
 							echo '<div class="number__artikel">' . count($_SESSION["warenkorb"]) . '</div>';
 						}
 					}
@@ -61,160 +60,167 @@
 	<div class="middle">
 		<div class="middle__container">
 
-				<div class="middle__container__tittle">
-					<h2>Kasse</h2>
-				</div>
-					<div class="middle__container__box">
-						<div class="middle__container__form">
-							<div class="middle__container__form__text">
-								<h3>Bestellung abschließen</h3>
-							</div>
-
-							<?php  if(!isset($_POST["absenden"])){
-								
-
-								?>
-								<form class="bestellung__form" method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">
-									<div class="bestellung__form__name">
-										<div class="bestellung__form__vorname">
-												<p for="vorname" >Vorname</p>
-												<input type="text" name="vorname" placeholder="Vorname" size="30" required>
-										</div>
-
-										<div class="bestellung__form__nachname">
-												<p for="nachname" >Nachname</p>
-												<input type="text" name="nachname" placeholder="Nachname" size="30" required>
-										</div>
-									</div><!-- bestellung__form__name-->
-									
-
-									<div class="bestellung__form__email">
-										<p>Email</p>
-										<input type="email" name="email" placeholder="Email" size="40" required>
-									</div>
-
-									<div class="bestellung__form__location">
-
-										<div class="bestellung__form__location__land">
-											<p>Land</p>
-											<input type="text" name="land" placeholder="Land" size="25" required>
-										</div>
-
-										<div class="bestellung__form__location__stadt">
-											<p>Stadt</p>
-											<input type="text" name="stadt" placeholder="Stadt" size="25" required>
-										</div>
-
-										<div class="bestellung__form__location__street">
-											<p>Straße</p>
-											<input type="text" name="street" placeholder="Straße" size="25" required>
-										</div>
-
-										<div class="bestellung__form__location__home__number">
-											<p>Hausnummer</p>
-											<input type="text" name="home__number" placeholder="Hausnummer"  size="25" inputmode="numeric"   maxlength="3" required>
-										</div>
-										
-
-										<div class="bestellung__form__location__postal_code">
-											<p>Postazahl</p>
-											<input type="text" name="postal_code" placeholder="Postazahl" size="15" inputmode="numeric"   maxlength="5" required>
-										</div>
-
-									</div><!-- bestellung__form__location-->
-									<div class="zusammenfassung">
-										<div class="zusammenfassung__tittle">
-											<h3>Stimmen Sie die Daten: </h3>
-										</div>
-										<table>
-											<tr class="choese">
-												<td><input type="checkbox" name="zusammenfassung__artikel" required></td>
-												<td><p  name="zusammenfassung__artikel" >Alle Artikel sind: <?php echo count($_SESSION["warenkorb"]); ?></p></td>
-											</tr>
-											<tr class="choese"> 
-												<td><input type="checkbox" name="zusammenfassung__summe" required></td>
-												<td><p name="zusammenfassung__summe" >Gesamtpreis beträgt: <?php echo $_SESSION["preisAllArtikel"]; ?>.00 &euro;</p></td>
-											</tr>
-										</table>
-									</div>
-									<div class="bestellung__senden">
-										<button class="bestellung__senden__button" type="submit" name="absenden">Bestellung abschließen</button>
-									</div>
-
-
-
-								</form>
-								<?php  
-									}else{
-										echo "<div class='bestellung__info'>";
-											echo "<p>Sie haben folgende Bestellung übermittelt: </p>";
-											echo "</br>";
-											echo "<p>Bestellung für ".$_POST["vorname"]." ".$_POST["nachname"].",die Email lautet ".$_POST["email"].",</p>";
-											echo "</br>";
-											echo "<p>Lieferung zum ".$_POST["land"].", ".$_POST["stadt"].", ".$_POST["street"]." ".$_POST["home__number"].", ".$_POST["postal_code"]." </p>";
-										
-										?>
-									
-										<div class="artikel_container">
-											<h4>Ihre Zetel:</h4>
-										<table>
-											<?php  
-											
-											for($i=0;$i<(count($_SESSION["warenkorb"]));++$i){?>
-
-														
-															<tr class="check__table">
-																<td style="width:70%;">
-																	<div class="artikel__box__title">
-																		<p><?php echo $_SESSION["warenkorb"][$i]["name"] ?></p>
-																	</div>
-																</td>
-																<td style="width:20%;">
-																	<div class="artikel__box__preis">
-																		<p><?php echo $_SESSION["warenkorb"][$i]["preis"] ?>.00 &euro;</p>
-																	</div>
-																</td>
-															</tr>
-														
-												
-												<?php   } ?>
-												</table>
-												<h4>Gesamt Preis aller Artikel beträgt: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro;</h4>
-										</div><!-- artikel_container-->	
-								<?php 
-
-										
-											echo "</br>";
-											echo "<p>Vielen Dank! Die Session wird beendet.</p>";
-											echo "</br>";
-											$bestellung ="----------------------------------------------";
-											$bestellung .= "\n\nArt-Name;\t\tArt-Preis\n";
-											for($i=0;$i<(count($_SESSION["warenkorb"]));++$i){
-												$bestellung .= $_SESSION['warenkorb'][$i]['name'].";\t\t". $_SESSION['warenkorb'][$i]['preis']."\n";
-											}
-
-											$bestellung .= "\nbestellt von \t". $_POST['vorname']." ;\t". $_POST['nachname'].";\t\t".$_POST['email']."\t ,gesamte Preis:;\t". $_SESSION['preisAllArtikel']."\n";
-											$bestellung .= $_POST['land'].", ".$_POST['stadt'].", ".$_POST['street']." ".$_POST['home__number'].", ".$_POST['postal_code']."\n";
-											$bestellung .="----------------------------------------------\n";
-											if(file_put_contents("bestellung.csv",$bestellung,FILE_APPEND)){
-												echo "<p>Die Bestelldaten wurden in der Datei bestellung.csv gespeichert.</p>";
-											}
-											
-											echo "<div class='start__button'>
-												<a href='startMoebelPage.php'><button class='start__button__start' >Start Seite</button></a>";
-											"</div>";
-										echo "</div>";
-
-										$_SESSION=array();
-										$_SESSION["warenkorb"]=array();
-										$_SESSION["preisAllArtikel"]=array();
-										session_destroy();
-									}
-										
-
-									?>
-							</div>
+			<div class="middle__container__tittle">
+				<h2>Kasse</h2>
+			</div>
+			<div class="middle__container__box">
+				<div class="middle__container__form">
+					<div class="middle__container__form__text">
+						<h3>Bestellung abschließen</h3>
 					</div>
+
+					<?php if (!isset($_POST["absenden"])) {
+
+
+					?>
+						<form class="bestellung__form" method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+							<div class="bestellung__form__name">
+								<div class="bestellung__form__vorname">
+									<p for="vorname">Vorname</p>
+									<input type="text" name="vorname" placeholder="Vorname" size="30" required>
+								</div>
+
+								<div class="bestellung__form__nachname">
+									<p for="nachname">Nachname</p>
+									<input type="text" name="nachname" placeholder="Nachname" size="30" required>
+								</div>
+							</div><!-- bestellung__form__name-->
+
+
+							<div class="bestellung__form__email">
+								<p>Email</p>
+								<input type="email" name="email" placeholder="Email" size="40" required>
+							</div>
+
+							<div class="bestellung__form__location">
+
+								<div class="bestellung__form__location__land">
+									<p>Land</p>
+									<input type="text" name="land" placeholder="Land" size="25" required>
+								</div>
+
+								<div class="bestellung__form__location__stadt">
+									<p>Stadt</p>
+									<input type="text" name="stadt" placeholder="Stadt" size="25" required>
+								</div>
+
+								<div class="bestellung__form__location__street">
+									<p>Straße</p>
+									<input type="text" name="street" placeholder="Straße" size="25" required>
+								</div>
+
+								<div class="bestellung__form__location__home__number">
+									<p>Hausnummer</p>
+									<input type="text" name="home__number" placeholder="Hausnummer" size="25" inputmode="numeric" maxlength="3" required>
+								</div>
+
+
+								<div class="bestellung__form__location__postal_code">
+									<p>Postazahl</p>
+									<input type="text" name="postal_code" placeholder="Postazahl" size="15" inputmode="numeric" maxlength="5" required>
+								</div>
+
+							</div><!-- bestellung__form__location-->
+							<div class="zusammenfassung">
+								<div class="zusammenfassung__tittle">
+									<h3>Stimmen Sie die Daten: </h3>
+								</div>
+								<table>
+									<tr class="choese">
+										<td><input type="checkbox" name="zusammenfassung__artikel" required></td>
+										<td>
+											<p name="zusammenfassung__artikel">Alle Artikel sind: <?php echo count($_SESSION["warenkorb"]); ?></p>
+										</td>
+									</tr>
+									<tr class="choese">
+										<td><input type="checkbox" name="zusammenfassung__summe" required></td>
+										<td>
+											<p name="zusammenfassung__summe">Gesamtpreis beträgt: <?php echo $_SESSION["preisAllArtikel"]; ?>.00 &euro;</p>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="bestellung__senden">
+								<button class="bestellung__senden__button" type="submit" name="absenden">Bestellung abschließen</button>
+							</div>
+
+
+
+						</form>
+					<?php
+					} else {
+						//Wenn der Formular gesendet war 
+						echo "<div class='bestellung__info'>";
+						echo "<p>Sie haben folgende Bestellung übermittelt: </p>";
+						echo "</br>";
+						echo "<p>Bestellung für " . $_POST["vorname"] . " " . $_POST["nachname"] . ",die Email lautet " . $_POST["email"] . ",</p>";
+						echo "</br>";
+						echo "<p>Lieferung zum " . $_POST["land"] . ", " . $_POST["stadt"] . ", " . $_POST["street"] . " " . $_POST["home__number"] . ", " . $_POST["postal_code"] . " </p>";
+
+					?>
+
+						<div class="artikel_container">
+							<h4>Ihre Zetel:</h4>
+							<table>
+								<?php
+
+								for ($i = 0; $i < (count($_SESSION["warenkorb"])); ++$i) { ?>
+
+
+									<tr class="check__table">
+										<td style="width:70%;">
+											<div class="artikel__box__title">
+												<p><?php echo $_SESSION["warenkorb"][$i]["name"] ?></p>
+											</div>
+										</td>
+										<td style="width:20%;">
+											<div class="artikel__box__preis">
+												<p><?php echo $_SESSION["warenkorb"][$i]["preis"] ?>.00 &euro;</p>
+											</div>
+										</td>
+									</tr>
+
+
+								<?php   } ?>
+							</table>
+							<h4>Gesamt Preis aller Artikel beträgt: <?php echo $_SESSION["preisAllArtikel"] ?>.00 &euro;</h4>
+						</div><!-- artikel_container-->
+					<?php
+
+
+						echo "</br>";
+						echo "<p>Vielen Dank! Die Session wird beendet.</p>";
+						echo "</br>";
+						$bestellung = "----------------------------------------------";
+						$bestellung .= "\n\nArt-Name;\t\tArt-Preis\n";
+						for ($i = 0; $i < (count($_SESSION["warenkorb"])); ++$i) {
+							$bestellung .= $_SESSION['warenkorb'][$i]['name'] . ";\t\t" . $_SESSION['warenkorb'][$i]['preis'] . "\n";
+						}
+
+						$bestellung .= "\nbestellt von \t" . $_POST['vorname'] . " ;\t" . $_POST['nachname'] . ";\t\t" . $_POST['email'] . "\t ,gesamte Preis:;\t" . $_SESSION['preisAllArtikel'] . "\n";
+						$bestellung .= $_POST['land'] . ", " . $_POST['stadt'] . ", " . $_POST['street'] . " " . $_POST['home__number'] . ", " . $_POST['postal_code'] . "\n";
+						$bestellung .= "----------------------------------------------\n";
+						if (file_put_contents("bestellung.csv", $bestellung, FILE_APPEND)) {
+							echo "<p>Die Bestelldaten wurden in der Datei bestellung.csv gespeichert.</p>";
+						}
+
+						echo "<div class='start__button'>
+								<a href='startMoebelPage.php'><button class='start__button__start' >Start Seite</button></a>";
+						"</div>";
+						echo "</div>";
+
+						// Alles wird gelöscht 
+						// Und die Session wird beendet 
+						$_SESSION = array();
+						$_SESSION["warenkorb"] = array();
+						$_SESSION["preisAllArtikel"] = array();
+						session_destroy();
+					}
+
+
+					?>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -237,14 +243,14 @@
 				<li class="list-inline-item"><a href="#">Terms</a></li>
 				<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
 			</ul>
-			<p class="copyright">Möbel Shop  © 2024</p>
+			<p class="copyright">Möbel Shop © 2024</p>
 		</footer>
 	</div><!--footer-basic-->
 
 
 
-<script src="js/Biblioteken/jquery-3.7.1.min.js"></script>
-<script src="js/kasseMoebelPage.js"></script>
+	<script src="js/Biblioteken/jquery-3.7.1.min.js"></script>
+	<script src="js/kasseMoebelPage.js"></script>
 
 
 </body>

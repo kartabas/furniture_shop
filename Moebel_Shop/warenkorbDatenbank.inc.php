@@ -8,8 +8,10 @@ if (!isset($_SESSION)) {
 			$_SESSION["warenkorb"] = [];
 		}
 
+		// "json_decode" dient ,um die JSON Daten in normale array zu umwandeln
 		$_SESSION["warenkorb"][] = json_decode($_POST["artikel"], true);
 
+		//Wird auf diese Seite öffnen 
 		header("Location: startMoebelPage.php");
 		exit();
 	}
@@ -21,9 +23,10 @@ if (!isset($_SESSION)) {
 		if (!isset($_SESSION["warenkorb"])) {
 			$_SESSION["warenkorb"] = [];
 		}
-
+		// "json_decode" dient ,um die JSON Daten in normale array zu umwandeln
 		$_SESSION["warenkorb"][] = json_decode($_POST["artikel"], true);
 
+		//Wird auf diese Seite öffnen 
 		header("Location: startMoebelPage.php");
 		exit();
 	}
